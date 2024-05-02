@@ -20,13 +20,15 @@ public class UserController {
 	@PostMapping(value="/registration")	
 	public String postUser(@ModelAttribute User user) {
 		User existDetails=us.emailExist(user);
+		boolean validMailCheck=us.validPwdAndMail(user);
 
-		if(existDetails==null) {
+		if(existDetails==null&&validMailCheck==true) {
 			us.postUser(user);
 			System.err.println("user added successfull");
 		}
 		else {
-			System.out.println("duplicate records");
+			System.out.println("duplicate records or password or email  not valid");
+			return "regestration";
 		}
 		return "login";
 

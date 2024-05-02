@@ -17,4 +17,5 @@ public String getRole(String email);
   User getUSer(String email);
 public void updateUser(User user);
 public boolean isPresent(String email);
+public boolean validPwdAndMail(User user);
 }
