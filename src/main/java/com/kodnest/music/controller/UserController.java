@@ -58,9 +58,13 @@ public class UserController {
 		return "login";
 	}
 	@PostMapping("/updatepassword")
-	public String updatePassword(@RequestParam ("email") String email,@RequestParam("password") String password,@RequestParam ("password") String confirmPassword ) {
-		if(password.equals(confirmPassword)) {
+	public String updatePassword(@RequestParam ("email") String email,@RequestParam("password") String password ) {
+		boolean isPresent=us.isPresent(email);
+		if(isPresent) {
 			us.updatePassword(email,password);
+		}
+		else {
+			return "forgotpassword";
 		}
 		return "login";
 	}

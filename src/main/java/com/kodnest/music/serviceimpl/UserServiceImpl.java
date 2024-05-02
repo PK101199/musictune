@@ -1,6 +1,6 @@
 package com.kodnest.music.serviceimpl;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,11 +48,13 @@ public String getRole(String email) {
 @Override
 public void updatePassword(String email,String password) {
 	
-	User user=ur.findByEmail(email);
-	String pwd=user.getPassword();
-	pwd=password;
-	user.setPassword(pwd);
-	ur.save(user);
+       User users=ur.findByEmail(email);
+      
+      
+       users.setPassword(password);
+       ur.save(users);
+     
+	
 	
 }
 @Override
@@ -64,6 +66,14 @@ public User getUSer(String email) {
 public void updateUser(User user) {
 	ur.save(user);
 	
+}
+@Override
+public boolean isPresent(String email) {
+	User user=ur.findByEmail(email);
+	if(user!=null) {
+		return true;
+	}
+	return false;
 }
 	
 

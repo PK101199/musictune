@@ -16,4 +16,5 @@ public String getRole(String email);
   void updatePassword(String email,String password);
   User getUSer(String email);
 public void updateUser(User user);
+public boolean isPresent(String email);
 }
