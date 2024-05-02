@@ -45,7 +45,26 @@ public String getRole(String email) {
      User user=ur.findByEmail(email);
      return user.getRole();
 }
-
+@Override
+public void updatePassword(String email,String password) {
+	
+	User user=ur.findByEmail(email);
+	String pwd=user.getPassword();
+	pwd=password;
+	user.setPassword(pwd);
+	ur.save(user);
+	
+}
+@Override
+public User getUSer(String email) {
+	
+	return ur.findByEmail(email);
+}
+@Override
+public void updateUser(User user) {
+	ur.save(user);
+	
+}
 	
 
 }

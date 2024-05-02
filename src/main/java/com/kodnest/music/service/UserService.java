@@ -13,5 +13,7 @@ public void postUser(User user);
 public User emailExist(User user);
 public boolean validUser(String email, String password);
 public String getRole(String email);
-
+  void updatePassword(String email,String password);
+  User getUSer(String email);
+public void updateUser(User user);
 }

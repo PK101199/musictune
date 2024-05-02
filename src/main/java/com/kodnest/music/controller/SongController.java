@@ -26,10 +26,10 @@ public class SongController {
 			System.out.println("duplicate song");
 		}
 		
-		return "song";
+		return "adminhome";
 	}
-	@GetMapping("/viewsong")
-	public String viewSongs(Model model){
+	@GetMapping("/playsongs")
+	public String playSongs(Model model){
 		boolean premium=true;
 		if(premium) {						
 				List<Song> songsList=songService.getSongs();
@@ -38,7 +38,7 @@ public class SongController {
 		
 		}
 		else {
-			return "paymentform";
+			return "pay";
 		}
 		
 	}
@@ -49,5 +49,13 @@ public class SongController {
 				return "addplaylist";
 		
 	}
+	@GetMapping("/viewsongs")
+	public String viewSongs(Model model){							
+			List<Song> songsList=songService.getSongs();
+				model.addAttribute("songs",songsList);				
+				return "viewsongs";	
+		
+	}
+	
 	
 }

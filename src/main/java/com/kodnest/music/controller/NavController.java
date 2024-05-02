@@ -18,5 +18,8 @@ public class NavController {
 		return "song";
 	}
 
-	
+	@GetMapping("/forgotpassword")
+	public String forgotPassword() {
+		return "forgotpassword";
+	}
 }
