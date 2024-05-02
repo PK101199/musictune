@@ -1,0 +1,26 @@
+@charset "ISO-8859-1";
+ body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-image: url('images/img2.jpeg');
+           
+      }
+
+      .navbar {
+        background-color: #1db82a;
+        overflow: hidden;
+      }
+
+      .navbar a {
+        float: right;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+
+      .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }

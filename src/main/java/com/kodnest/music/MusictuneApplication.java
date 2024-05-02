@@ -1,0 +1,13 @@
+package com.kodnest.music;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MusictuneApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MusictuneApplication.class, args);
+	}
+
+}
