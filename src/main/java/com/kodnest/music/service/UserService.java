@@ -18,4 +18,5 @@ public String getRole(String email);
 public void updateUser(User user);
 public boolean isPresent(String email);
 public boolean validPwdAndMail(User user);
+public boolean isPremium(String email);
 }

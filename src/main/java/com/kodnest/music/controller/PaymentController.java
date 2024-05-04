@@ -32,7 +32,7 @@ public class PaymentController {
 	@ResponseBody
 	public String createOrder(HttpSession session) {
 
-		int  amount = 1;
+		int  amount = 5000;
 		Order order=null;
 		try {
 			RazorpayClient razorpay=new RazorpayClient("rzp_test_grNXosyP2O2now", "k6W23TqJLH41hKwN95OXOx9z");
@@ -86,7 +86,7 @@ public class PaymentController {
 		user.setPremium(true);
 		userService.updateUser(user);
 
-		return "customerhome";
+		return "login";
 	}
 
 	@GetMapping("/payment-failure")

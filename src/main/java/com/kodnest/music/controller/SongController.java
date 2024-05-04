@@ -33,7 +33,7 @@ public class SongController {
 		boolean premium=true;
 		if(premium) {						
 				List<Song> songsList=songService.getSongs();
-				model.addAttribute("songs",songsList);				
+				model.addAttribute("songs", songsList);
 				return "viewsongs";
 		
 		}

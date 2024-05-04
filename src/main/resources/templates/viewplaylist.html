@@ -3,37 +3,47 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="viewplaylist.css">
 </head>
 <body>
 	<h2>view Playlist</h2>
-	<table border="1">
-    <tr>
-    
-        <th>Name</th>
-        <th>songs</th>
-        <th>link</th>
-    </tr>
-    <tr th:each="playlist : ${playlists}">
-    
-        
-        <td th:text="${playlist.name}"></td>
-        <td>
-        <ul>
-        <li th:each="song:${playlist.songs}">
-        <span th:text="${song.name}"></span>
-        </li>
-        </td>
-        <td>
-        <ol>
-         <li th:each="song:${playlist.songs}">
-         <audio controls th:src="${song.link}"></audio>
-        </ol>
-        </li>
-        </ul>
-        </td>
-             
-           
-    </tr>
+	<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Songs</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="playlist : ${playlists}">
+            <td th:text="${playlist.name}"></td>
+            <td>
+                <ul>
+                    <li th:each="song : ${playlist.songs}" th:text="${song.name}" th:attr="data-link=${song.link}"></li>
+                </ul>
+            </td>
+            <td>
+                <ol>
+                    <li th:each="song : ${playlist.songs}">
+                        <audio controls th:src="${song.link}" th:attr="data-link=${song.link}" class="audio-player"></audio>
+                    </li>
+                </ol>
+            </td>
+        </tr>
+    </tbody>
 </table>
+
+<script>
+    document.addEventListener('play', function(event){
+        var audios = document.getElementsByClassName('audio-player');
+        for(var i = 0, len = audios.length; i < len;i++){
+            if(audios[i] != event.target){
+                audios[i].pause();
+            }
+        }
+    }, true);
+</script>
+
 </body>
 </html>

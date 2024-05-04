@@ -1,0 +1,80 @@
+@charset "ISO-8859-1";
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Style the table header */
+th {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style the table rows */
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style the table data cells */
+td {
+    padding: 10px;
+}
+
+/* Style the unordered list */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the list items */
+li {
+    margin-bottom: 5px;
+}
+
+/* Style the audio player */
+audio {
+    width: 100%;
+    margin-top: 5px;
+}
+audio {
+    width: 100%; /* Make the audio player take up the full width of its container */
+    margin-top: 5px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+}
+
+/* Style the controls */
+audio::-webkit-media-controls-panel {
+    background-color: #f8f8f8;
+    border-radius: 4px;
+}
+
+audio::-webkit-media-controls-play-button {
+    color: #333;
+}
+
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button {
+    color: #333;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #333;
+}
+
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-volume-slider {
+    display: none; /* Hide the mute button and volume slider */
+}
+
+/* Style the volume control */
+audio::-webkit-media-controls-volume-control-container {
+    display: none; /* Hide the volume control */
+}
